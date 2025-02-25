@@ -1,21 +1,44 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    // 모듈 시스템 설정
+    "module": "commonjs", // 모듈 시스템 설정 (commonjs, amd, system, umd, esnext, node)
+    "target": "ES2021", // 타입스크립트 컴파일러가 생성할 자바스크립트 버전
+    "moduleResolution": "node", // 모듈 해석 방법 (node, classic, bundler)
+
+    // 데코레이터 설정
+    "emitDecoratorMetadata": true, // 데코레이터 메타데이터를 생성할 것인지 여부
+    "experimentalDecorators": true, // 실험적인 데코레이터를 활성화할 것인지 여부
+    "sourceMap": true, // 소스 맵을 생성할 것인지 여부 (디버깅 시 원본 TypeScript 코드를 볼 수 있게 함)
+
+    // 컴파일 관련 옵션
+    "declaration": true, // 타입스크립트 컴파일러가 자바스크립트 파일을 생성할 때 타입 정보를 포함하도록 함
+    "incremental": true, // 증분 컴파일을 활성화할 것인지 여부 (이전 컴파일 결과를 재사용하여 컴파일 속도를 높임)
+    "skipLibCheck": true, // 외부 라이브러리 체크를 건너뛸 것인지 여부 (컴파일 속도를 높임)
+    "removeComments": true, // 컴파일러가 주석을 제거할 것인지 여부
+    "outDir": "./dist", // 컴파일된 파일이 저장될 디렉토리
+    "baseUrl": "./", // 모듈 해석의 기준이 되는 기본 URL
+    "noEmitOnError": true, // 컴파일 오류 발생 시 컴파일 결과물을 생성하지 않음
+    "importHelpers": true, // 타입스크립트가 생성하는 헬퍼 코드를 외부 라이브러리(tslib)에서 가져옴 (번들 크기를 줄임)
+
+    // 코드 검사 관련 옵션
+    "allowSyntheticDefaultImports": true, // 기본 임포트를 허용할 것인지 여부 (import React from 'react'와 같은 구문을 허용)
+    "strictNullChecks": true, // 엄격한 null 검사를 활성화 (null과 undefined를 명시적으로 처리해야 함)
+    "forceConsistentCasingInFileNames": true, // 파일 이름의 일관성 유지 (파일 이름의 대소문자를 일관되게 처리)
+    "noImplicitAny": true, // 암시적 any 타입을 허용하지 않음
+    "strictBindCallApply": true, // bind, call, apply 사용 시 엄격한 타입 검사
+    "noFallthroughCasesInSwitch": true, // switch 문에서 누락된 break 문을 허용하지 않음
+
+    "noUnusedLocals": true, // 사용되지 않는 지역 변수를 허용하지 않음
+    "noUnusedParameters": true, // 사용되지 않는 매개변수를 허용하지 않음
+    "esModuleInterop": true, // CommonJS 모듈과 ES 모듈 간의 상호 운용성을 개선 (import * as React from 'react' 대신 import React from 'react'와 같은 구문을 사용할 수 있게 함)
+    "strictFunctionTypes": true, // 함수 매개변수의 타입 검사를 엄격하게 함
+    "noImplicitReturns": true, // 암시적으로 반환 타입이 없는 함수를 허용하지 않음 (누락된 반환 값을 방지)
+    "noImplicitOverride": true, // 상속받은 메서드를 오버라이드할 때 override 키워드를 강제 함 (실수 방지)
+
+    // 경로 관련
+    "paths": {
+      // "@components/*": ["src/components/*"],
+      // "@util/*": ["src/common/util/*"]
+    }
   }
 }
