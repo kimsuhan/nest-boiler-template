@@ -27,9 +27,12 @@ export default tseslint.config(
   },
   {
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn'
+      '@typescript-eslint/no-explicit-any': 'error', // any 타입 사용 금지
+      '@typescript-eslint/no-floating-promises': 'warn', // 부수 효과가 있는 함수 호출 금지
+      '@typescript-eslint/no-unsafe-argument': 'warn', // 안전하지 않은 인자 사용 금지
+
+      'prettier/prettier': ['error', { endOfLine: 'auto' }], // 줄바꿈 스타일 표준화
+      'no-console': 'warn', // console.log 사용 금지
     },
   },
 );
